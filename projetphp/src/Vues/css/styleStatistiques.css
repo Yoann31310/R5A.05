@@ -1,0 +1,196 @@
+/* Sections principales */
+.section-stats {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+.section-stats h2 {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Grille de cartes */
+.grille-statistiques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.carte-info {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.carte-info h3 {
+    color: #34495e;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.chiffre {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #3498db;
+    margin: 10px 0;
+}
+
+.chiffre.victoire {
+    color: #27ae60;
+}
+
+.chiffre.defaite {
+    color: #e74c3c;
+}
+
+.chiffre.nul {
+    color: #f39c12;
+}
+
+/* Badge série */
+.badge-serie {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.badge-serie.victoire {
+    background: #27ae60;
+    color: white;
+}
+
+.badge-serie.defaite {
+    background: #e74c3c;
+    color: white;
+}
+
+.badge-serie.nul {
+    background: #f39c12;
+    color: white;
+}
+
+/* Barre de progression */
+.barre-resultats {
+    display: flex;
+    height: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.segment-barre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.segment-barre.victoire {
+    background: #27ae60;
+}
+
+.segment-barre.nul {
+    background: #f39c12;
+}
+
+.segment-barre.defaite {
+    background: #e74c3c;
+}
+
+.legende-barre {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.legende-item {
+    display: flex;
+    align-items: center;
+}
+
+.legende-item.victoire {
+    color: #27ae60;
+}
+
+.legende-item.nul {
+    color: #f39c12;
+}
+
+.legende-item.defaite {
+    color: #e74c3c;
+}
+
+/* Infos match */
+.bloc-match {
+    padding: 15px;
+    background: #e8f4f8;
+    border-left: 4px solid #3498db;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.bloc-match p {
+    margin: 8px 0;
+}
+
+.bloc-match strong {
+    color: #2c3e50;
+}
+
+.resultat-match {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.resultat-match.victoire {
+    color: #27ae60;
+}
+
+.resultat-match.defaite {
+    color: #e74c3c;
+}
+
+.resultat-match.nul {
+    color: #f39c12;
+}
+
+/* Liste joueurs */
+.liste-joueurs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.liste-joueurs li {
+    padding: 12px;
+    margin: 8px 0;
+    background: #ecf0f1;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge-participation {
+    background: #3498db;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+}

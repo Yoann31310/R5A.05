@@ -1,0 +1,98 @@
+/* Configuration de base */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    display: flex; /* Permet d'aligner le menu à gauche et le contenu à droite */
+    background-color: #f4f7f6;
+    height: 100vh;
+}
+
+/* Menu latéral */
+.barre-laterale {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.menu-navigation {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-navigation li {
+    margin: 15px 0;
+}
+
+.menu-navigation a {
+    color: #bdc3c7;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu-navigation a:hover, .menu-navigation a.actif {
+    background-color: #34495e;
+    color: #ffffff;
+}
+
+/* Zone contenu */
+.contenu-principal {
+    flex-grow: 1; /* Prend tout l'espace restant */
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.entete-page {
+    margin-bottom: 40px;
+}
+
+/* Cartes d'infos rapides */
+.grille-statistiques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.carte-info {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.chiffre {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.resultat-gagne {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* Bouton déconnexion */
+.zone-deconnexion {
+    margin-top: auto; /* Pousse le bouton vers le bas */
+}
+
+.bouton-deconnexion {
+    display: block;
+    text-align: center;
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
