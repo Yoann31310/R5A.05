@@ -1,6 +1,7 @@
 package tp1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -42,12 +43,14 @@ public class ParticipationController {
     return participationRepository.findByJoueurId(joueurId);
   }
 
+  @PreAuthorize("hasRole('COACH')")
   @PostMapping(path="/add") // Map ONLY POST Requests
   public Participation addNewParticipation(@RequestBody Participation participation) {
     // @RequestBody maps the HttpRequest body to a transfer or domain object
     return participationRepository.save(participation);
   }
 
+  @PreAuthorize("hasRole('COACH')")
   @PutMapping(path="/{id}")
   public Participation updateParticipation(@PathVariable Integer id, @RequestBody Participation details) {
     Participation participation = participationRepository.findById(id).orElse(null);
@@ -68,6 +71,7 @@ public class ParticipationController {
     return null;
   }
 
+  @PreAuthorize("hasRole('COACH')")
   @DeleteMapping(path="/{id}")
   public String deleteParticipation(@PathVariable Integer id) {
     participationRepository.deleteById(id);

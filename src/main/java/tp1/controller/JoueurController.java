@@ -1,6 +1,7 @@
 package tp1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,11 +32,13 @@ public class JoueurController {
     return joueurRepository.findById(id).orElse(null);
   }
 
+  @PreAuthorize("hasRole('COACH')")
   @PostMapping(path="/add") // Map ONLY POST Requests
   public Joueur addJoueur(@RequestBody Joueur joueur) {
     return joueurRepository.save(joueur);
   }
 
+  @PreAuthorize("hasRole('COACH')")
   @PutMapping(path="/{id}")
   public Joueur updateJoueur(@PathVariable Integer id, @RequestBody Joueur joueurDetails) {
     Joueur joueur = joueurRepository.findById(id).orElse(null);
@@ -52,6 +55,7 @@ public class JoueurController {
     return null;
   }
 
+  @PreAuthorize("hasRole('COACH')")
   @DeleteMapping(path="/{id}")
   public String deleteJoueur(@PathVariable Integer id) {
     joueurRepository.deleteById(id);

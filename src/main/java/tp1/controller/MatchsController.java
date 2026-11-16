@@ -1,6 +1,7 @@
 package tp1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,12 +33,14 @@ public class MatchsController {
     return matchsRepository.findById(id).orElse(null);
   }
 
+  @PreAuthorize("hasRole('COACH')")
   @PostMapping(path="/add") // Map ONLY POST Requests
   public Matchs addNewMatch(@RequestBody Matchs match) {
     // @RequestBody maps the HttpRequest body to a transfer or domain object
     return matchsRepository.save(match);
   }
 
+  @PreAuthorize("hasRole('COACH')")
   @PutMapping(path="/{id}")
   public Matchs updateMatch(@PathVariable Integer id, @RequestBody Matchs matchDetails) {
     Matchs match = matchsRepository.findById(id).orElse(null);
@@ -52,6 +55,7 @@ public class MatchsController {
     return null;
   }
 
+  @PreAuthorize("hasRole('COACH')")
   @DeleteMapping(path="/{id}")
   public String deleteMatch(@PathVariable Integer id) {
     matchsRepository.deleteById(id);
